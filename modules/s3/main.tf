@@ -12,25 +12,24 @@ provider "aws" {
 }
 
 module "s3" {
-  source               = "./modules/s3/"
-  bucket               = "galang-s3-bucket"
-  acl                  = "private"  # Change to "public-read" or "" if needed
-  versioning           = "Enabled"  # Options: "Enabled" or "Disabled"
-  object_lock_enabled  = false
-  force_destroy        = false
+  source              = "./modules/s3/"
+  bucket              = "galang-s3-bucket"
+  acl                 = "private" # Change to "public-read" or "" if needed
+  versioning          = "Enabled" # Options: "Enabled" or "Disabled"
+  object_lock_enabled = false
+  force_destroy       = false
 
   # Public access settings
-  block_public_access  = true
-  block_public_acls    = true
-  block_public_policy  = true
-  ignore_public_acls   = true
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
   restrict_public_buckets = true
 
   # Encryption settings
-  enable_encryption = true
 
   object_ownership = "BucketOwnerPreferred"
 }
+    
 
 
 
@@ -121,9 +120,4 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
 }
 
 
-# Tagging
-resource "aws_s3_bucket" "this" {
-  count  = var.create_bucket ? 1 : 0
-  bucket = var.bucket
-  tags   = var.tags
-}
+

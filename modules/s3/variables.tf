@@ -6,13 +6,13 @@ variable "acl" {
 
 variable "block_public_acls" {
   description = "Indicates whether Amazon S3 should block public ACLs for this bucket."
-  type       = bool
+  type        = bool
   default     = true
 }
 
 variable "block_public_policy" {
   description = "Indicates whether Amazon S3 should block public bucket policies for this bucket."
-  type       = bool
+  type        = bool
   default     = true
 }
 
