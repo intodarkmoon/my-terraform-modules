@@ -2,3 +2,56 @@ If there's an error installing autocomplete tab terraform
 
 https://discuss.hashicorp.com/t/error-executing-cli-did-not-find-any-shells-to-install/15220/2
 
+
+1. Updating Files Locally and Pushing to GitHub
+Whenever you make updates to your files in the terraform folder, you can follow these steps to push the changes to GitHub:
+
+Stage the updated files:
+
+bash
+Copy code
+git add .
+Commit the changes with a message describing what you updated:
+
+bash
+Copy code
+git commit -m "Describe the update made to the terraform files"
+Pull the latest changes from GitHub to ensure you’re up to date:
+
+bash
+Copy code
+git pull origin darkmoon --rebase
+This step prevents conflicts by making sure your local branch has the latest changes from GitHub.
+If there are merge conflicts, Git will notify you. Resolve any conflicts, then proceed with the commit.
+Push the changes to GitHub:
+
+bash
+Copy code
+git push
+2. Using a New Device to Access the Latest Files from GitHub
+If you’re on a new device or laptop, here’s how to get the latest version of your repository:
+
+Clone the repository from GitHub:
+
+bash
+Copy code
+git clone https://github.com/your-github-username/your-repo-name.git
+This will create a folder named your-repo-name (or you can rename it by specifying a different folder name after the URL).
+Change directories into the newly cloned repository:
+bash
+Copy code
+cd your-repo-name
+Switch to your branch (if necessary): If you’re working on a specific branch like darkmoon, switch to it:
+
+bash
+Copy code
+git checkout darkmoon
+Make updates as usual: After cloning, you can make changes, commit, and push as you would on your original device.
+
+Regular Workflow on the New Device: When updating the files on this new device, use the same workflow as before:
+
+Stage changes: git add .
+Commit changes: git commit -m "update message"
+Pull any recent updates: git pull origin darkmoon --rebase
+Push updates: git push
+By following these steps, your local repository and GitHub repository will remain synchronized, and you’ll be able to switch between devices while keeping everything up-to-date.
