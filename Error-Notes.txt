@@ -1,0 +1,4 @@
+If there's an error installing autocomplete tab terraform
+
+https://discuss.hashicorp.com/t/error-executing-cli-did-not-find-any-shells-to-install/15220/2
+
